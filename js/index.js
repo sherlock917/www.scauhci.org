@@ -36,7 +36,7 @@
     }
   }
 
-  $('.header-hide').onclick = hideHeader;
+  $('.header-btn').onclick = hideHeader;
 
   // functions
   function initHeader () {
