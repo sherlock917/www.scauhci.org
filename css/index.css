@@ -5,7 +5,8 @@
   position: fixed;
   top: 0;
   left: 0;
-  box-shadow: 0px 0px 5px #ddd;
+  background: #fff;
+  box-shadow: 0px 0px 5px #aaa;
   overflow: hidden;
   transition: height 1s;
 }
@@ -14,13 +15,14 @@
   width: 100%;
   height: 100%;
   position: absolute;
-  background: rgba(255, 255, 255, 0.3);
   z-index: 100;
   text-align: center;
 }
 
 .header-background {
-  -webkit-filter: blur(15px);
+  opacity: 0.7;
+  -webkit-filter: blur(10px);
+  filter:blur(10px);
 }
 
 .header-logo {
@@ -83,3 +85,17 @@
 }
 
 /* Section */
+.section {
+  margin: 20px auto;
+}
+
+.section-intro {
+  margin-top: 120px;
+  text-align: center;
+  font-size: 18px;
+  line-height: 60px;
+}
+
+.footer {
+  text-align: center;
+}

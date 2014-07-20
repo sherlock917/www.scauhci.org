@@ -15,9 +15,11 @@
     classNames = classNames.split(' ');
     for (var i = 0; i < classNames.length; i++) {
       if (!this.className.match(classNames[i] + ' ')) {
+        this.className = this.className.substring(0, this.className.length - 1);
         return false
       }
     }
+    this.className = this.className.substring(0, this.className.length - 1);
     return true
   }
 
