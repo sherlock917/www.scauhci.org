@@ -1,6 +1,9 @@
 (function () {
 
   // dom extensions
+  HTMLElement.prototype.addClass = function (classNames) {
+    this.className += ' ' + classNames
+  }
   HTMLElement.prototype.removeClass = function (classNames) {
     classNames = classNames.split(' ');
     for (var i = 0; i < classNames.length; i++) {
@@ -29,13 +32,6 @@
   }
 
   // event handlers
-  document.onscroll = function () {
-    blurryHeader();
-    if ($('.header').hasClass('header-expand')) {
-      hideHeader();
-    }
-  }
-
   $('.header-btn').onclick = hideHeader;
 
   // functions
@@ -48,15 +44,37 @@
     header.appendChild(headerBackground);
   }
 
-  function blurryHeader () {
-    $('.header-background').style.marginTop = - document.body.scrollTop + 'px';
+  function followScroll () {
+    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+    $('.header-background').style.marginTop = - scrollTop + 'px';
   }
 
   function hideHeader () {
-    $('.header').removeClass('header-expand');
+    if ($('.header').hasClass('header-expand')) {
+      $('.header').removeClass('header-expand');
+    }
   }
 
-  // functions to execute
-  initHeader();
+  function fixStyles () {
+    $('.header-content').style.background = 'rgba(255, 255, 255, 0.9)';
+  }
+
+  // functions to execute (according to the browser)
+  if (navigator.userAgent.indexOf('Chrome') > 0) {
+    // event handlers
+    document.onscroll = function () {
+      followScroll();
+      hideHeader();
+    }
+
+    // functions
+    initHeader();
+  } else {
+    document.onscroll = function () {
+      hideHeader();
+    }
+
+    fixStyles();
+  }
 
 })();
