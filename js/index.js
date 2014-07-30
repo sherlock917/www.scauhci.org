@@ -56,11 +56,11 @@
       $('.header').removeClass('header-expand');
     }
   }
-
+  
   function fixStyles () {
     $('.header-content').style.background = 'rgba(255, 255, 255, 0.9)';
   }
-
+  
   // functions to execute (according to the browser)
   if (navigator.userAgent.indexOf('Chrome') > 0) {
     // event handlers
