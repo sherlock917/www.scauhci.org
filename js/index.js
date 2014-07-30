@@ -34,6 +34,10 @@
   }
 
   // event handlers
+  document.onscroll = function () {
+    hideHeader();
+  }
+
   $('.header-btn').onclick = hideHeader;
 
   // functions
@@ -54,29 +58,41 @@
   function hideHeader () {
     if ($('.header').hasClass('header-expand')) {
       $('.header').removeClass('header-expand');
+      highlightSlogan();
     }
+  }
+
+  function highlightSlogan() {
+    $('.slogan').addClass('slogan-hightlighted');
+    setTimeout(function () {
+      $('.slogan').addClass('slogan-hidden');
+      $('.video').style.display = 'block';
+      $('.video').addClass('video-show');
+    }, 5000);
   }
   
   function fixStyles () {
-    $('.header-content').style.background = 'rgba(255, 255, 255, 0.9)';
+    $('.header').style.background = 'rgba(255, 255, 255, 0.9)';
   }
   
   // functions to execute (according to the browser)
-  if (navigator.userAgent.indexOf('Chrome') > 0) {
-    // event handlers
-    document.onscroll = function () {
-      followScroll();
-      hideHeader();
-    }
+  // if (navigator.userAgent.indexOf('Chrome') > 0) {
+  //   // event handlers
+  //   document.onscroll = function () {
+  //     followScroll();
+  //     hideHeader();
+  //   }
 
-    // functions
-    initHeader();
-  } else {
-    document.onscroll = function () {
-      hideHeader();
-    }
+  //   // functions
+  //   initHeader();
+  // } else {
+  //   document.onscroll = function () {
+  //     hideHeader();
+  //   }
 
-    fixStyles();
-  }
+  //   fixStyles();
+  // }
+
+  fixStyles();
 
 })();
