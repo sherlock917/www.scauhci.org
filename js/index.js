@@ -67,8 +67,10 @@
     setTimeout(function () {
       $('.slogan').addClass('slogan-hidden');
       $('.video').style.display = 'block';
-      $('.video').addClass('video-show');
-    }, 5000);
+      setTimeout(function () {
+        $('.video').addClass('video-show');
+      }, 500);
+    }, 6000);
   }
   
   function fixStyles () {
