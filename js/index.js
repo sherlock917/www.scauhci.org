@@ -58,19 +58,7 @@
   function hideHeader () {
     if ($('.header').hasClass('header-expand')) {
       $('.header').removeClass('header-expand');
-      highlightSlogan();
     }
-  }
-
-  function highlightSlogan() {
-    $('.slogan').addClass('slogan-hightlighted');
-    setTimeout(function () {
-      $('.slogan').addClass('slogan-hidden');
-      $('.video').style.display = 'block';
-      setTimeout(function () {
-        $('.video').addClass('video-show');
-      }, 500);
-    }, 6000);
   }
   
   function fixStyles () {
