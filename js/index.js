@@ -36,53 +36,24 @@
   // event handlers
   document.onscroll = function () {
     hideHeader();
+    detectScroll();
   }
 
   $('.header-btn').onclick = hideHeader;
 
   // functions
-  function initHeader () {
-    var main = $('.main').innerHTML;
-    var header = $('.header');
-    var headerBackground = document.createElement('div');
-    headerBackground.className = 'header-background';
-    headerBackground.innerHTML = main;
-    header.appendChild(headerBackground);
-  }
-
-  function followScroll () {
-    var scrollTop = document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
-    $('.header-background').style.marginTop = - scrollTop + 'px';
-  }
-
   function hideHeader () {
     if ($('.header').hasClass('header-expand')) {
       $('.header').removeClass('header-expand');
     }
   }
-  
-  function fixStyles () {
-    $('.header').style.background = 'rgba(255, 255, 255, 0.9)';
+
+  function detectScroll () {
+    if (document.body.scrollTop > 400 && document.body.scrollTop < 700 && !$('.row-3').hasClass('intro-hightlight')) {
+      $('.row-3').addClass('intro-hightlight');
+    } else if (document.body.scrollTop > 700 && !$('.row-2').hasClass('news-hightlight')) {
+      $('.row-2').addClass('news-hightlight');
+    }
   }
-  
-  // functions to execute (according to the browser)
-  // if (navigator.userAgent.indexOf('Chrome') > 0) {
-  //   // event handlers
-  //   document.onscroll = function () {
-  //     followScroll();
-  //     hideHeader();
-  //   }
-
-  //   // functions
-  //   initHeader();
-  // } else {
-  //   document.onscroll = function () {
-  //     hideHeader();
-  //   }
-
-  //   fixStyles();
-  // }
-
-  fixStyles();
 
 })();

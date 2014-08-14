@@ -5,7 +5,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0px 0px 5px #aaa;
   overflow: hidden;
   transition: height 1s;
@@ -31,7 +31,7 @@
   height: 40px;
   display: block;
   margin: 10px auto;
- transition: width 1s, height 1s, margin 1s;
+  transition: width 1s, height 1s, margin 1s;
 }
 
 .header-title {
@@ -50,27 +50,6 @@
   -moz-animation: updown 2s infinite;
   -o-animation: updown 2s infinite;
   animation: updown 2s infinite;
-}
-
-@-webkit-keyframes updown {
-  0% {margin-top: 150px;}
-  50% {margin-top: 160px;}
-  100% {margin-top: 150px;}
-}
-@-moz-keyframes updown {
-  0% {margin-top: 150px;}
-  50% {margin-top: 160px;}
-  100% {margin-top: 150px;}
-}
-@-o-keyframes updown {
-  0% {margin-top: 150px;}
-  50% {margin-top: 160px;}
-  100% {margin-top: 150px;}
-}
-@keyframes updown {
-  0% {margin-top: 150px;}
-  50% {margin-top: 160px;}
-  100% {margin-top: 150px;}
 }
 
 /* Expanded header */
@@ -103,7 +82,7 @@
   text-align: center;
 }
 
-/*video*/
+/* Video */
 .video{
   margin-top: 80px;
   width: 100%;
@@ -111,7 +90,17 @@
   text-align: center;
 }
 
-/*content*/
+.video h1{
+  color: #fff;
+}
+
+.videoinit{
+  margin-top:20px; 
+  width:950px;
+  height: 550px;
+}
+
+/* Content */
 .row-3{
   width: 1140px;
   margin: 0 auto;
@@ -129,17 +118,14 @@
   width: 350px;
   height: 350px;
   margin-left: 25px;
-  box-shadow: 3px 3px 10px #aaa;
   float: left;
 }
 .in-block-2{
   display: inline-block;
-  width: 530px;
+  width: 510px;
   height: 350px;
-  margin-left: 30px;
-  box-shadow: 3px 3px 10px #aaa;
+  margin-left: 40px;
   float: left;
-
 }
 .block-header{
   margin-bottom: 0px;
@@ -149,42 +135,92 @@
   -moz-border-radius: 0px;
   border-radius: 0px;
   min-height: 40px;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding: 0 20px;
   background-color: #f0f0f0;
-  -webkit-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
-  -moz-box-shadow: 0 1px 4px rgba(0,0,0,0.065);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.065);
   font-size: 16px;
   line-height: 40px;
 }
 
 .nav{
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 0 15px;
   margin: 10px 0 9px 25px;
   list-style: none;
 }
 .block-inner{
-    margin: 10px 0 9px 25px;
-    padding-top: 20px;
+  padding: 15px;
 }
-.block-inner p{
-  margin-top: 5px;
+.block-inner p {
+  margin: 15px auto;
 }
-.vedioinit{
-  margin-top:20px; 
-  width:950px;
-  height: 550px;
+
+/* Intros */
+.intro-hightlight .intro-dev {
+  -webkit-animation: float-up 0.5s forwards;
+  -moz-animation: float-up 0.5s forwards;
+  -o-animation: float-up 0.5s forwards;
+  animation: float-up 0.5s forwards;
 }
-.hidden-bar{
-  width:956px;
-  height: 40px;
-  background: #08c;
-  position: absolute;
-  left: 237px;
-  top: 530px;
+.intro-hightlight .intro-ued {
+  -webkit-animation: float-up 0.5s 0.5s forwards;
+  -moz-animation: float-up 0.5s 0.5s forwards;
+  -o-animation: float-up 0.5s 0.5s forwards;
+  animation: float-up 0.5s 0.5s forwards;
 }
-.video h1{
-  color: #fff;
+.intro-hightlight .intro-pd {
+  -webkit-animation: float-up 0.5s 1s forwards;
+  -moz-animation: float-up 0.5s 1s forwards;
+  -o-animation: float-up 0.5s 1s forwards;
+  animation: float-up 0.5s 1s forwards;
+}
+
+/* News */
+.news-hightlight .news-activities {
+  -webkit-animation: float-up 0.5s forwards;
+  -moz-animation: float-up 0.5s forwards;
+  -o-animation: float-up 0.5s forwards;
+  animation: float-up 0.5s forwards;
+}
+.news-hightlight .news-blogs {
+  -webkit-animation: float-up 0.5s 0.5s forwards;
+  -moz-animation: float-up 0.5s 0.5s forwards;
+  -o-animation: float-up 0.5s 0.5s forwards;
+  animation: float-up 0.5s 0.5s forwards;
+}
+
+@-webkit-keyframes updown {
+  0% {margin-top: 150px;}
+  50% {margin-top: 160px;}
+  100% {margin-top: 150px;}
+}
+@-moz-keyframes updown {
+  0% {margin-top: 150px;}
+  50% {margin-top: 160px;}
+  100% {margin-top: 150px;}
+}
+@-o-keyframes updown {
+  0% {margin-top: 150px;}
+  50% {margin-top: 160px;}
+  100% {margin-top: 150px;}
+}
+@keyframes updown {
+  0% {margin-top: 150px;}
+  50% {margin-top: 160px;}
+  100% {margin-top: 150px;}
+}
+
+@-webkit-keyframes float-up {
+  from {box-shadow: 0 0 0 #fff;}
+  to {box-shadow: 3px 3px 15px #888;}
+}
+@-moz-keyframes float-up {
+  from {box-shadow: 0 0 0 #fff;}
+  to {box-shadow: 3px 3px 15px #888;}
+}
+@-o-keyframes float-up {
+  from {box-shadow: 0 0 0 #fff;}
+  to {box-shadow: 3px 3px 15px #888;}
+}
+@keyframes float-up {
+  from {box-shadow: 0 0 0 #fff;}
+  to {box-shadow: 3px 3px 15px #888;}
 }
